@@ -31,8 +31,10 @@ app.listen(process.env.PORT, ()=>{
 
 //database connection
 
-mongoose.connect(process.env.MONGO_URI).then(()=>{
-    console.log('Database connected')
-}).catch((error)=>{
-    console.log('error')
-});
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("Database connected");
+  })
+  .catch((err) => {
+    console.log("Database connection error:", err.message);
+  });
